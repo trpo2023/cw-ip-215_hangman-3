@@ -9,7 +9,11 @@
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-lsfml-system",
+                "-lsfml-window",
+                "-lsfml-graphics",
+                "-lsfml-audio"
             ],
             "options": {
                 "cwd": "${fileDirname}"
