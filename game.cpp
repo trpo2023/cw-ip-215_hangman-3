@@ -5,17 +5,71 @@
 using namespace std;
 using namespace sf;
 
+Font font;
+
+// Функция для выбора сложности
+void ChooseDiff(RenderWindow& window){
+    while(1){
+        
+        Vector2i mousePoz = Mouse::getPosition(window);
+
+        window.clear();
+
+        RectangleShape Diff1(Vector2f(250, 100));
+        Diff1.setPosition(275, 225);
+        Diff1.setFillColor(Color::Blue);
+        Text fontDiff1("Easy", font, 35);
+        fontDiff1.setPosition(275, 225);
+        fontDiff1.setFillColor(Color::Black);
+
+        RectangleShape Diff2(Vector2f(250, 100));
+        Diff2.setPosition(275, 550);
+        Diff2.setFillColor(Color::Blue);
+        Text fontDiff2("Medium", font, 35);
+        fontDiff2.setPosition(275, 550);
+        fontDiff2.setFillColor(Color::Black);
+
+        RectangleShape Diff3(Vector2f(250, 100));
+        Diff3.setPosition(275, 875);
+        Diff3.setFillColor(Color::Blue);
+        Text fontDiff3("Hard", font, 35);
+        fontDiff3.setPosition(275, 875);
+        fontDiff3.setFillColor(Color::Black);
+
+        window.draw(Diff1);
+        window.draw(fontDiff1);
+        window.draw(Diff2);
+        window.draw(fontDiff2);
+        window.draw(Diff3);
+        window.draw(fontDiff3);
+        window.display();
+
+        if(Mouse::isButtonPressed(Mouse::Left)){
+            if (Diff1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+                break;
+            }
+            
+            if (Diff2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+                break;
+            }
+            
+            if (Diff3.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+                break;
+            }
+        }
+    }
+}
+
 int main(){
+    // Добавление шрифта
+    if(!font.loadFromFile("C:/Windows/Fonts/Arial.ttf")) return EXIT_FAILURE;
+
     setlocale (LC_ALL,"ru_RU.UTF-8");
     
-    wchar_t alphabet[33] = {'а','б','в','г','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','ъ','ы','ь','э','ю','я'};
+    string alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
     
     // Создание окна
     RenderWindow window(VideoMode(800, 1200), "SFML window");
-    
-    // Добавление шрифта
-    Font font;
-    if(!font.loadFromFile("C:/Windows/Fonts/Arial.ttf")) return EXIT_FAILURE;
 
     Texture texture;
     if (!texture.loadFromFile("../1.png")) return EXIT_FAILURE;
@@ -58,15 +112,13 @@ int main(){
         window.display();
 
         // Выход из программы при нажатии кнопки выхода
-        if(Mouse::isButtonPressed(Mouse::Left))
+        if(Mouse::isButtonPressed(Mouse::Left)){
             if (But2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
                 window.close();
             }
-
-        // Переход к выбору сложности 
-        if(Mouse::isButtonPressed(Mouse::Left))
             if (But1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-                
+                ChooseDiff(window);
             }
+        }    
     }
 }
