@@ -294,7 +294,13 @@ void ZagSlov(RenderWindow& window, int Difficulty, int y, int x, string line){
 		fontkeycap32.setFillColor(Color::White);
 		fontkeycap33.setFillColor(Color::White);
 
+		Texture texture;
+		texture.loadFromFile("1.png");
+		Sprite sprite(texture);
+		sprite.setPosition(x/2-400, y/2-470);
+
 		window.clear(sf::Color::White);
+		window.draw(sprite);
 		window.draw(keycap1);
 		window.draw(keycap2);
 		window.draw(keycap3);
@@ -361,6 +367,7 @@ void ZagSlov(RenderWindow& window, int Difficulty, int y, int x, string line){
 		window.draw(fontkeycap31);
 		window.draw(fontkeycap32);
 		window.draw(fontkeycap33);
+
 		if(Difficulty == 0){
 			Event event;
 			while (window.pollEvent(event)){
@@ -672,39 +679,6 @@ void ChooseDiff(RenderWindow& window, int x, int y){
 		window.draw(Diff3);
 		window.draw(fontDiff3);
 		window.display();
-		RectangleShape Zalivka(Vector2f(x, y));
-		Zalivka.setPosition(0, 0);
-		Zalivka.setFillColor(Color::White);
-
-		RectangleShape Diff1(Vector2f(300, 100));
-		Diff1.setPosition(x/2-150, y/3-200);
-		Diff1.setFillColor(Color::Blue);
-		Text fontDiff1("Easy", font, 35);
-		fontDiff1.setPosition(x/2-150+110, y/3-200+25);
-		fontDiff1.setFillColor(Color::Black);
-
-		RectangleShape Diff2(Vector2f(300, 100));
-		Diff2.setPosition(x/2-150, y/3*2-200);
-		Diff2.setFillColor(Color::Blue);
-		Text fontDiff2("Medium", font, 35);
-		fontDiff2.setPosition(x/2-150+85, y/3*2-200+25);
-		fontDiff2.setFillColor(Color::Black);
-
-		RectangleShape Diff3(Vector2f(300, 100));
-		Diff3.setPosition(x/2-150, y-200);
-		Diff3.setFillColor(Color::Blue);
-		Text fontDiff3("Hard", font, 35);
-		fontDiff3.setPosition(x/2-150+110, y-200+25);
-		fontDiff3.setFillColor(Color::Black);
-
-		window.draw(Zalivka);
-		window.draw(Diff1);
-		window.draw(fontDiff1);
-		window.draw(Diff2);
-		window.draw(fontDiff2);
-		window.draw(Diff3);
-		window.draw(fontDiff3);
-		window.display();
 
         if(Mouse::isButtonPressed(Mouse::Left)){
             if (Diff1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
@@ -746,7 +720,7 @@ int main(){
     Texture texture;
     if (!texture.loadFromFile("1.png")) return EXIT_FAILURE;
     Sprite sprite(texture);
-    sprite.setPosition(x/2-400, 0);
+    sprite.setPosition(x/2-400, y/2-470);
     
     
     RectangleShape But1(Vector2f(300, 100));
