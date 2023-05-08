@@ -19,9 +19,9 @@ void ZagSlov(RenderWindow& window, int Difficulty, int y, int x, string line){
 		if(Difficulty == 0){
 			Event event;
 			while (window.pollEvent(event)){
-            	if (event.type == Event::Closed)
-                	window.close();
-        	}
+            			if (event.type == Event::Closed)
+                			window.close();
+        		}
 			window.clear();	
 			window.draw(Zalivka);	
 			RectangleShape ZagBuk1(Vector2f(50, 50));
@@ -87,7 +87,7 @@ void RandSlov(int Difficulty, RenderWindow& window, int x, int y){
 			for(int i = 0; i < a; i++){
 				getline(d1, line);
 			}
-    	}
+    		}
 		ZagSlov(window, 0, y, x, line);
 	}
 	if(Difficulty == 1){
@@ -96,7 +96,7 @@ void RandSlov(int Difficulty, RenderWindow& window, int x, int y){
 			for(int i = 0; i < a; i++){
 				getline(d2, line);
 			}
-    	}
+    		}
     	ZagSlov(window, 1, y, x, line);
 	}
 	if(Difficulty == 2){
@@ -105,7 +105,7 @@ void RandSlov(int Difficulty, RenderWindow& window, int x, int y){
 			for(int i = 0; i < a; i++){
 				getline(d3, line);
 			}
-    	}
+    		}
     	ZagSlov(window, 2, y, x, line);
 	}
 }
@@ -118,9 +118,9 @@ void keyboard(RenderWindow& window, int x, int y){
 	while(window.isOpen()){
 		Event event;
 		while (window.pollEvent(event)){
-        	if (event.type == Event::Closed)
-                window.close();
-        }
+        		if (event.type == Event::Closed)
+                		window.close();
+        	}
 		Vector2i mousePoz = Mouse::getPosition(window);
 		
 		RectangleShape keycap1(Vector2f(50, 50));
@@ -472,158 +472,158 @@ void keyboard(RenderWindow& window, int x, int y){
 		window.display();
 
 		if(Mouse::isButtonPressed(Mouse::Right)){
-            if (keycap1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(q)
-            }
-            if (keycap2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(w)
-            }
-            if (keycap3.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(e)
-            }
-            if (keycap4.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(r)
-            }
-            if (keycap5.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(t)
-            }
-            if (keycap6.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(y)
-            }
-            if (keycap7.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(u)
-            }
-            if (keycap8.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(i)
-            }
-            if (keycap9.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(o)
-            }
-            if (keycap10.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(p)
-            }
-            if (keycap11.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove({)
-            }
-            if (keycap12.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(})
-            }
-            if (keycap13.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(a)
-            }
-            if (keycap14.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(s)
-            }
-            if (keycap15.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(d)
-            }
-            if (keycap16.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(f)
-            }
-            if (keycap17.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(g)
-            }
-            if (keycap18.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(h)
-            }
-            if (keycap19.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(j)
-            }
-            if (keycap20.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(k)
-            }
-            if (keycap21.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(l)
-            }
-            if (keycap22.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(;)
-            }
-            if (keycap23.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(')
-            }
-            if (keycap24.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(z)
-            }
-            if (keycap25.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(x)
-            }
-            if (keycap26.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(c)
-            }
-            if (keycap27.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(v)
-            }
-            if (keycap28.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(b)
-            }
-            if (keycap29.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(n)
-            }
-            if (keycap30.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(m)
-            }
-            if (keycap31.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(,)
-            }
-            if (keycap32.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(.)
-            }
-            if (keycap33.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(`)
-            }
-        }
+            		if (keycap1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+            			// vizov func proverki na est' ili net v slove(q)
+            		}
+			if (keycap2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(w)
+			}
+			if (keycap3.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(e)
+			}
+			if (keycap4.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(r)
+			}
+			if (keycap5.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(t)
+			}
+			if (keycap6.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(y)
+			    }
+			    if (keycap7.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(u)
+			    }
+			    if (keycap8.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(i)
+			    }
+			    if (keycap9.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(o)
+			    }
+			    if (keycap10.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(p)
+			    }
+			    if (keycap11.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove({)
+			    }
+			    if (keycap12.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(})
+			    }
+			    if (keycap13.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(a)
+			    }
+			    if (keycap14.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(s)
+			    }
+			    if (keycap15.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(d)
+			    }
+			    if (keycap16.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(f)
+			    }
+			    if (keycap17.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(g)
+			    }
+			    if (keycap18.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(h)
+			    }
+			    if (keycap19.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(j)
+			    }
+			    if (keycap20.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(k)
+			    }
+			    if (keycap21.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(l)
+			    }
+			    if (keycap22.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(;)
+			    }
+			    if (keycap23.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(')
+			    }
+			    if (keycap24.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(z)
+			    }
+			    if (keycap25.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(x)
+			    }
+			    if (keycap26.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(c)
+			    }
+			    if (keycap27.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(v)
+			    }
+			    if (keycap28.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(b)
+			    }
+			    if (keycap29.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(n)
+			    }
+			    if (keycap30.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(m)
+			    }
+			    if (keycap31.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(,)
+			    }
+			    if (keycap32.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(.)
+			    }
+			    if (keycap33.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(`)
+			}
+        	}
 	}
 }
 
 void ChooseDiff(RenderWindow& window, int x, int y){
 	int k;
-    while(window.isOpen()){
-        Vector2i mousePoz = Mouse::getPosition(window);
-        Event event;
+	while(window.isOpen()){
+        	Vector2i mousePoz = Mouse::getPosition(window);
+        	Event event;
 		while (window.pollEvent(event)){
-            if (event.type == Event::Closed)
-                window.close();
-        }
-        window.clear();
+            		if (event.type == Event::Closed)
+                		window.close();
+        	}
+        	window.clear();
         
-        RectangleShape Zalivka(Vector2f(x, y));
-    	Zalivka.setPosition(0, 0);
-    	Zalivka.setFillColor(Color::White);
-    	
-        RectangleShape Diff1(Vector2f(300, 100));
-        Diff1.setPosition(x/2-150, y/3-200);
-        Diff1.setFillColor(Color::Blue);
-        Text fontDiff1("Easy", font, 35);
-        fontDiff1.setPosition(x/2-150+110, y/3-200+25);
-        fontDiff1.setFillColor(Color::Black);
-        
-        RectangleShape Diff2(Vector2f(300, 100));
-        Diff2.setPosition(x/2-150, y/3*2-200);
-        Diff2.setFillColor(Color::Blue);
-        Text fontDiff2("Medium", font, 35);
-        fontDiff2.setPosition(x/2-150+85, y/3*2-200+25);
-        fontDiff2.setFillColor(Color::Black);
-        
-        RectangleShape Diff3(Vector2f(300, 100));
-        Diff3.setPosition(x/2-150, y-200);
-        Diff3.setFillColor(Color::Blue);
-        Text fontDiff3("Hard", font, 35);
-        fontDiff3.setPosition(x/2-150+110, y-200+25);
-        fontDiff3.setFillColor(Color::Black);
-        
-        window.draw(Zalivka);
-        window.draw(Diff1);
-        window.draw(fontDiff1);
-        window.draw(Diff2);
-        window.draw(fontDiff2);
-        window.draw(Diff3);
-        window.draw(fontDiff3);
-        window.display();
+		RectangleShape Zalivka(Vector2f(x, y));
+		Zalivka.setPosition(0, 0);
+		Zalivka.setFillColor(Color::White);
+
+		RectangleShape Diff1(Vector2f(300, 100));
+		Diff1.setPosition(x/2-150, y/3-200);
+		Diff1.setFillColor(Color::Blue);
+		Text fontDiff1("Easy", font, 35);
+		fontDiff1.setPosition(x/2-150+110, y/3-200+25);
+		fontDiff1.setFillColor(Color::Black);
+
+		RectangleShape Diff2(Vector2f(300, 100));
+		Diff2.setPosition(x/2-150, y/3*2-200);
+		Diff2.setFillColor(Color::Blue);
+		Text fontDiff2("Medium", font, 35);
+		fontDiff2.setPosition(x/2-150+85, y/3*2-200+25);
+		fontDiff2.setFillColor(Color::Black);
+
+		RectangleShape Diff3(Vector2f(300, 100));
+		Diff3.setPosition(x/2-150, y-200);
+		Diff3.setFillColor(Color::Blue);
+		Text fontDiff3("Hard", font, 35);
+		fontDiff3.setPosition(x/2-150+110, y-200+25);
+		fontDiff3.setFillColor(Color::Black);
+
+		window.draw(Zalivka);
+		window.draw(Diff1);
+		window.draw(fontDiff1);
+		window.draw(Diff2);
+		window.draw(fontDiff2);
+		window.draw(Diff3);
+		window.draw(fontDiff3);
+		window.display();
 
         if(Mouse::isButtonPressed(Mouse::Left)){
             if (Diff1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-				k = 0;
-				break;
+		    k = 0;
+		    break;
             }
             
             if (Diff2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
