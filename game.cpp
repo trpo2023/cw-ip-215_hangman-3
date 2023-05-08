@@ -67,10 +67,6 @@ void ChooseDiff(RenderWindow& window, int x, int y){
 int main(){
     if(!font.loadFromFile("C:/Windows/Fonts/Arial.ttf")) return EXIT_FAILURE;
     
-    setlocale (LC_ALL,"ru_RU.UTF-8");
-    
-    string alphabet = "?????????????????????????????????";
-    
     int x = 1920, y = 1080;
 
     RenderWindow window(VideoMode(x, y), "SFML window");
