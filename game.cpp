@@ -7,7 +7,7 @@ using namespace sf;
 
 Font font;
 
-// Функция для выбора сложности
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹Р±РѕСЂР° СЃР»РѕР¶РЅРѕСЃС‚Рё
 void ChooseDiff(RenderWindow& window){
     while(1){
 
@@ -18,21 +18,21 @@ void ChooseDiff(RenderWindow& window){
         RectangleShape Diff1(Vector2f(250, 100));
         Diff1.setPosition(275, 225);
         Diff1.setFillColor(Color::Blue);
-        Text fontDiff1("Легкая", font, 35);
+        Text fontDiff1("Р›РµРіРєР°СЏ", font, 35);
         fontDiff1.setPosition(275, 225);
         fontDiff1.setFillColor(Color::Black);
 
         RectangleShape Diff2(Vector2f(250, 100));
         Diff2.setPosition(275, 550);
         Diff2.setFillColor(Color::Blue);
-        Text fontDiff2("Средняя", font, 35);
+        Text fontDiff2("РЎСЂРµРґРЅСЏСЏ", font, 35);
         fontDiff2.setPosition(275, 550);
         fontDiff2.setFillColor(Color::Black);
 
         RectangleShape Diff3(Vector2f(250, 100));
         Diff3.setPosition(275, 875);
         Diff3.setFillColor(Color::Blue);
-        Text fontDiff3("Сложная", font, 35);
+        Text fontDiff3("РЎР»РѕР¶РЅР°СЏ", font, 35);
         fontDiff3.setPosition(275, 875);
         fontDiff3.setFillColor(Color::Black);
 
@@ -61,37 +61,37 @@ void ChooseDiff(RenderWindow& window){
 }
 
 int main(){
-    // Добавление шрифта
+    // Р”РѕР±Р°РІР»РµРЅРёРµ С€СЂРёС„С‚Р°
     if(!font.loadFromFile("C:/Windows/Fonts/Arial.ttf")) return EXIT_FAILURE;
 
     setlocale (LC_ALL,"Russian");
     
-    string alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+    string alphabet = "Р°Р±РІРіРґРµС‘Р¶Р·РёР№РєР»РјРЅРѕРїСЂСЃС‚СѓС„С…С†С‡С€С‰СЉС‹СЊСЌСЋСЏ";
     
-    // Создание окна
+    // РЎРѕР·РґР°РЅРёРµ РѕРєРЅР°
     RenderWindow window(VideoMode(800, 1200), "SFML window");
 
     Texture texture;
     if (!texture.loadFromFile("../1.png")) return EXIT_FAILURE;
     Sprite sprite(texture);
 
-    // Создание кнопки старта игры
+    // РЎРѕР·РґР°РЅРёРµ РєРЅРѕРїРєРё СЃС‚Р°СЂС‚Р° РёРіСЂС‹
     RectangleShape But1(Vector2f(250, 100));
     But1.setPosition(100, 1000);
     But1.setFillColor(Color::Blue);
-    Text fontBut1("Начать игру", font, 35);
+    Text fontBut1("РќР°С‡Р°С‚СЊ РёРіСЂСѓ", font, 35);
     fontBut1.setPosition(135,1025);
     fontBut1.setFillColor(Color::Black);
 
-    // Создание кнопки выхода
+    // РЎРѕР·РґР°РЅРёРµ РєРЅРѕРїРєРё РІС‹С…РѕРґР°
     RectangleShape But2(Vector2f(250, 100));
     But2.setPosition(450, 1000);
     But2.setFillColor(Color::Blue);
-    Text fontBut2("Выйти из игры", font, 35);
+    Text fontBut2("Р’С‹Р№С‚Рё РёР· РёРіСЂС‹", font, 35);
     fontBut2.setPosition(485,1025);
     fontBut2.setFillColor(Color::Black);
 
-    //Задержка окна
+    //Р—Р°РґРµСЂР¶РєР° РѕРєРЅР°
     while (window.isOpen())
     {
 
@@ -111,7 +111,7 @@ int main(){
         window.draw(fontBut2);
         window.display();
 
-        // Выход из программы при нажатии кнопки выхода
+        // Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹ РїСЂРё РЅР°Р¶Р°С‚РёРё РєРЅРѕРїРєРё РІС‹С…РѕРґР°
         if(Mouse::isButtonPressed(Mouse::Left)){
             if (But2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
                 window.close();
