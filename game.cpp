@@ -627,6 +627,10 @@ int main(){
     
     string alphabet = "?????????????????????????????????";
     
+    setlocale (LC_ALL,"ru_RU.UTF-8");
+    
+    string alphabet = "?????????????????????????????????";
+    
     int x = 1920, y = 1080;
     RenderWindow window(VideoMode(x, y), "SFML window");
     
@@ -639,6 +643,7 @@ int main(){
     Sprite sprite(texture);
     sprite.setPosition(x/2-400, 0);
     
+    
     RectangleShape But1(Vector2f(300, 100));
     But1.setPosition(x/2-400, y-180);
     But1.setFillColor(Color::Blue);
@@ -646,12 +651,14 @@ int main(){
     fontBut1.setPosition(x/2-400+60, y-180+25);
     fontBut1.setFillColor(Color::Black);
     
+    
     RectangleShape But2(Vector2f(300, 100));
     But2.setPosition(x/2+100, y-180);
     But2.setFillColor(Color::Blue);
     Text fontBut2("Exit Game", font, 35);
     fontBut2.setPosition(x/2+100+60, y-180+25);
     fontBut2.setFillColor(Color::Black);
+    
     while (window.isOpen())
     {
         Vector2i mousePoz = Mouse::getPosition(window);
@@ -670,6 +677,7 @@ int main(){
         window.draw(But2);
         window.draw(fontBut2);
         window.display();
+        
         
         if(Mouse::isButtonPressed(Mouse::Left)){
             if (But2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
