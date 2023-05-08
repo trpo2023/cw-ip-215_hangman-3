@@ -10,104 +10,8 @@ using namespace sf;
 Font font;
 
 void ZagSlov(RenderWindow& window, int Difficulty, int y, int x, string line){
-	if(Difficulty == 0){
-		RectangleShape ZagBuk1(Vector2f(50, 50));
-		RectangleShape ZagBuk2(Vector2f(50, 50));
-		RectangleShape ZagBuk3(Vector2f(50, 50));
-		RectangleShape ZagBuk4(Vector2f(50, 50));
-		RectangleShape ZagBuk5(Vector2f(50, 50));
-		RectangleShape ZagBuk6(Vector2f(50, 50));
-		RectangleShape ZagBuk7(Vector2f(50, 50));
-
-		int t = x/2-420;
-		ZagBuk1.setPosition(t, y/2+50);
-		t+=60;
-		ZagBuk2.setPosition(t, y/2+50);
-		t+=60;
-		ZagBuk3.setPosition(t, y/2+50);
-		t+=60;
-		ZagBuk4.setPosition(t, y/2+50);
-		t+=60;
-		ZagBuk5.setPosition(t, y/2+50);
-		t+=60;
-		ZagBuk6.setPosition(t, y/2+50);
-		t+=60;
-		ZagBuk7.setPosition(t, y/2+50);
-		t+=60;
-
-		ZagBuk1.setFillColor(Color::Black);
-		ZagBuk2.setFillColor(Color::Black);
-		ZagBuk3.setFillColor(Color::Black);
-		ZagBuk4.setFillColor(Color::Black);
-		ZagBuk5.setFillColor(Color::Black);
-		ZagBuk6.setFillColor(Color::Black);
-		ZagBuk7.setFillColor(Color::Black);
-
-		window.draw(ZagBuk1);
-		window.draw(ZagBuk2);
-		window.draw(ZagBuk3);
-		window.draw(ZagBuk4);
-		window.draw(ZagBuk5);
-		window.draw(ZagBuk6);
-		window.draw(ZagBuk7);
-		window.display();
-	}
-	if(Difficulty == 1){
-
-	}
-	if(Difficulty == 2){
-
-	}
-	while(1){
-		if(Mouse::isButtonPressed(Mouse::Right))break;
-	};
-}
-
-void RandSlov(int Difficulty, int y, int x, RenderWindow& window){
-	int a = rand()%100+1;
-	string line;
-	if(Difficulty == 0){
-		ifstream d1("diff1.txt");
-		if (d1.is_open()){
-			for(int i = 0; i < a; i++){
-				getline(d1, line);
-			}
-    	}
-		ZagSlov(window, 0, y, x, line);
-	}
-	if(Difficulty == 1){
-		ifstream d2("diff2.txt");
-		if (d2.is_open()){
-			for(int i = 0; i < a; i++){
-				getline(d2, line);
-			}
-    	}
-	}
-	if(Difficulty == 2){
-		ifstream d3("diff3.txt");
-		if (d3.is_open()){
-			for(int i = 0; i < a; i++){
-				getline(d3, line);
-			}
-    	}
-	}
-	cout << line;
-}
-
-void checkletter(char x){
-	
-}
-
-void keyboard(RenderWindow& window, int x, int y){
-	while(1){
+	while(window.isOpen()){
 		Vector2i mousePoz = Mouse::getPosition(window);
-		
-		RectangleShape Zalivka(Vector2f(x, y));
-		Zalivka.setPosition(0, 0);
-		Zalivka.setFillColor(Color::White);
-		
-		window.draw(Zalivka);
-		
 		RectangleShape keycap1(Vector2f(50, 50));
 		RectangleShape keycap2(Vector2f(50, 50));
 		RectangleShape keycap3(Vector2f(50, 50));
@@ -115,7 +19,7 @@ void keyboard(RenderWindow& window, int x, int y){
 		RectangleShape keycap5(Vector2f(50, 50));
 		RectangleShape keycap6(Vector2f(50, 50));
 		RectangleShape keycap7(Vector2f(50, 50));
-		RectangleShape keycap8(Vector2f(50, 50));
+		RectangleShape keycap8(Vector2f(50, 50));	
 		RectangleShape keycap9(Vector2f(50, 50));
 		RectangleShape keycap10(Vector2f(50, 50));
 		RectangleShape keycap11(Vector2f(50, 50));
@@ -141,7 +45,7 @@ void keyboard(RenderWindow& window, int x, int y){
 		RectangleShape keycap31(Vector2f(50, 50));
 		RectangleShape keycap32(Vector2f(50, 50));
 		RectangleShape keycap33(Vector2f(50, 50));
-		
+			
 		int t = x/2-400;
 		keycap1.setPosition(t, y/2+200+50);
 		t+=55;
@@ -167,7 +71,7 @@ void keyboard(RenderWindow& window, int x, int y){
 		t+=55;
 		keycap12.setPosition(t, y/2+200+50);
 		t+=55;
-		
+			
 		t = x/2-380;
 		keycap13.setPosition(t, y/2+255+50);
 		t+=55;
@@ -191,7 +95,7 @@ void keyboard(RenderWindow& window, int x, int y){
 		t+=55;
 		keycap23.setPosition(t, y/2+255+50);
 		t+=55;
-		
+			
 		t = x/2-350;
 		keycap24.setPosition(t, y/2+310+50);
 		t+=55;
@@ -213,7 +117,7 @@ void keyboard(RenderWindow& window, int x, int y){
 		t+=55;
 		keycap33.setPosition(t, y/2+310+50);
 		t+=55;
-		
+			
 		keycap1.setFillColor(Color::Black);
 		keycap2.setFillColor(Color::Black);
 		keycap3.setFillColor(Color::Black);
@@ -247,7 +151,7 @@ void keyboard(RenderWindow& window, int x, int y){
 		keycap31.setFillColor(Color::Black);
 		keycap32.setFillColor(Color::Black);
 		keycap33.setFillColor(Color::Black);
-		
+			
 		Text fontkeycap1("q", font, 35);
 		Text fontkeycap2("w", font, 35);
 		Text fontkeycap3("e", font, 35);
@@ -281,7 +185,7 @@ void keyboard(RenderWindow& window, int x, int y){
 		Text fontkeycap31(",", font, 35);
 		Text fontkeycap32(".", font, 35);
 		Text fontkeycap33("/", font, 35);
-		
+			
 		t = x/2-400+10;
 		fontkeycap1.setPosition(t, y/2+200+50);
 		t+=55;
@@ -307,7 +211,7 @@ void keyboard(RenderWindow& window, int x, int y){
 		t+=55;
 		fontkeycap12.setPosition(t, y/2+200+50);
 		t+=55;
-		
+			
 		t = x/2-380+10;
 		fontkeycap13.setPosition(t, y/2+255+50);
 		t+=55;
@@ -331,7 +235,7 @@ void keyboard(RenderWindow& window, int x, int y){
 		t+=55;
 		fontkeycap23.setPosition(t, y/2+255+50);
 		t+=55;
-		
+			
 		t = x/2-350+10;
 		fontkeycap24.setPosition(t, y/2+310+50);
 		t+=55;
@@ -353,7 +257,7 @@ void keyboard(RenderWindow& window, int x, int y){
 		t+=55;
 		fontkeycap33.setPosition(t, y/2+310+50);
 		t+=55;
-		
+			
 		fontkeycap1.setFillColor(Color::White);
 		fontkeycap2.setFillColor(Color::White);
 		fontkeycap3.setFillColor(Color::White);
@@ -387,7 +291,8 @@ void keyboard(RenderWindow& window, int x, int y){
 		fontkeycap31.setFillColor(Color::White);
 		fontkeycap32.setFillColor(Color::White);
 		fontkeycap33.setFillColor(Color::White);
-		
+
+		window.clear(sf::Color::White);
 		window.draw(keycap1);
 		window.draw(keycap2);
 		window.draw(keycap3);
@@ -454,182 +359,343 @@ void keyboard(RenderWindow& window, int x, int y){
 		window.draw(fontkeycap31);
 		window.draw(fontkeycap32);
 		window.draw(fontkeycap33);
-		window.display();
+		if(Difficulty == 0){
+			Event event;
+			while (window.pollEvent(event)){
+            	if (event.type == Event::Closed)
+                window.close();
+        	}
+			RectangleShape ZagBuk1(Vector2f(50, 50));
+			RectangleShape ZagBuk2(Vector2f(50, 50));
+			RectangleShape ZagBuk3(Vector2f(50, 50));
+			RectangleShape ZagBuk4(Vector2f(50, 50));
+			RectangleShape ZagBuk5(Vector2f(50, 50));
+			RectangleShape ZagBuk6(Vector2f(50, 50));
+			RectangleShape ZagBuk7(Vector2f(50, 50));
+	
+			int t = x/2-220;
+			ZagBuk1.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk2.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk3.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk4.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk5.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk6.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk7.setPosition(t, y/2+50);
+			t+=60;
+	
+			ZagBuk1.setFillColor(Color::Black);
+			ZagBuk2.setFillColor(Color::Black);
+			ZagBuk3.setFillColor(Color::Black);
+			ZagBuk4.setFillColor(Color::Black);
+			ZagBuk5.setFillColor(Color::Black);
+			ZagBuk6.setFillColor(Color::Black);
+			ZagBuk7.setFillColor(Color::Black);
 
+			window.draw(ZagBuk1);
+			window.draw(ZagBuk2);
+			window.draw(ZagBuk3);
+			window.draw(ZagBuk4);
+			window.draw(ZagBuk5);
+			window.draw(ZagBuk6);
+			window.draw(ZagBuk7);
+			window.display();
+		}
+		if(Difficulty == 1){
+			Event event;
+			while (window.pollEvent(event)){
+            	if (event.type == Event::Closed)
+                window.close();
+        	}
+			RectangleShape ZagBuk1(Vector2f(50, 50));
+			RectangleShape ZagBuk2(Vector2f(50, 50));
+			RectangleShape ZagBuk3(Vector2f(50, 50));
+			RectangleShape ZagBuk4(Vector2f(50, 50));
+			RectangleShape ZagBuk5(Vector2f(50, 50));
+			RectangleShape ZagBuk6(Vector2f(50, 50));
+	
+			int t = x/2-220;
+			ZagBuk1.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk2.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk3.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk4.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk5.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk6.setPosition(t, y/2+50);
+			t+=60;
+	
+			ZagBuk1.setFillColor(Color::Black);
+			ZagBuk2.setFillColor(Color::Black);
+			ZagBuk3.setFillColor(Color::Black);
+			ZagBuk4.setFillColor(Color::Black);
+			ZagBuk5.setFillColor(Color::Black);
+			ZagBuk6.setFillColor(Color::Black);
+
+			window.draw(ZagBuk1);
+			window.draw(ZagBuk2);
+			window.draw(ZagBuk3);
+			window.draw(ZagBuk4);
+			window.draw(ZagBuk5);
+			window.draw(ZagBuk6);
+			window.display();
+		}
+		if(Difficulty == 2){
+			Event event;
+			while (window.pollEvent(event)){
+            	if (event.type == Event::Closed)
+                window.close();
+        	}
+			RectangleShape ZagBuk1(Vector2f(50, 50));
+			RectangleShape ZagBuk2(Vector2f(50, 50));
+			RectangleShape ZagBuk3(Vector2f(50, 50));
+			RectangleShape ZagBuk4(Vector2f(50, 50));
+			RectangleShape ZagBuk5(Vector2f(50, 50));
+	
+			int t = x/2-220;
+			ZagBuk1.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk2.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk3.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk4.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk5.setPosition(t, y/2+50);
+			t+=60;
+	
+			ZagBuk1.setFillColor(Color::Black);
+			ZagBuk2.setFillColor(Color::Black);
+			ZagBuk3.setFillColor(Color::Black);
+			ZagBuk4.setFillColor(Color::Black);
+			ZagBuk5.setFillColor(Color::Black);
+
+			window.draw(ZagBuk1);
+			window.draw(ZagBuk2);
+			window.draw(ZagBuk3);
+			window.draw(ZagBuk4);
+			window.draw(ZagBuk5);
+			window.display();
+		}
 		if(Mouse::isButtonPressed(Mouse::Right)){
-            if (keycap1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(q)
-            }
-            if (keycap2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(w)
-            }
-            if (keycap3.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(e)
-            }
-            if (keycap4.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(r)
-            }
-            if (keycap5.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(t)
-            }
-            if (keycap6.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(y)
-            }
-            if (keycap7.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(u)
-            }
-            if (keycap8.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(i)
-            }
-            if (keycap9.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(o)
-            }
-            if (keycap10.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(p)
-            }
-            if (keycap11.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove({)
-            }
-            if (keycap12.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(})
-            }
-            if (keycap13.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(a)
-            }
-            if (keycap14.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(s)
-            }
-            if (keycap15.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(d)
-            }
-            if (keycap16.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(f)
-            }
-            if (keycap17.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(g)
-            }
-            if (keycap18.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(h)
-            }
-            if (keycap19.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(j)
-            }
-            if (keycap20.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(k)
-            }
-            if (keycap21.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(l)
-            }
-            if (keycap22.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(;)
-            }
-            if (keycap23.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(')
-            }
-            if (keycap24.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(z)
-            }
-            if (keycap25.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(x)
-            }
-            if (keycap26.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(c)
-            }
-            if (keycap27.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(v)
-            }
-            if (keycap28.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(b)
-            }
-            if (keycap29.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(n)
-            }
-            if (keycap30.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(m)
-            }
-            if (keycap31.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(,)
-            }
-            if (keycap32.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(.)
-            }
-            if (keycap33.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	// vizov func proverki na est' ili net v slove(`)
-            }
-        }
+			if (keycap1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(q)
+			}
+			if (keycap2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(w)
+			}
+			if (keycap3.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(e)
+			}
+			if (keycap4.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(r)
+			}
+			if (keycap5.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(t)
+			}
+			if (keycap6.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(y)
+			}
+			if (keycap7.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(u)
+			}
+			if (keycap8.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(i)
+			}
+			if (keycap9.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(o)
+			}
+			if (keycap10.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(p)
+			}
+			if (keycap11.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove({)
+			}
+			if (keycap12.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(})
+			}
+			if (keycap13.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(a)
+			}
+			if (keycap14.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(s)
+			}
+			if (keycap15.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(d)
+			}
+			if (keycap16.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(f)
+			}
+			if (keycap17.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(g)
+			}
+			if (keycap18.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(h)
+			}
+			if (keycap19.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(j)
+			}
+			if (keycap20.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(k)
+			}
+			if (keycap21.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(l)
+			}
+			if (keycap22.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(;)
+			}
+			if (keycap23.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(')
+			}
+			if (keycap24.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(z)
+			}
+			if (keycap25.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(x)
+			}
+			if (keycap26.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(c)
+			}
+			if (keycap27.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(v)
+			}
+			if (keycap28.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(b)
+			}
+			if (keycap29.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(n)
+			}
+			if (keycap30.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(m)
+			}
+			if (keycap31.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(,)
+			}
+			if (keycap32.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(.)
+			}
+			if (keycap33.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+				// vizov func proverki na est' ili net v slove(`)
+			}
+		}
+	}
+	
+}
+
+void RandSlov(int Difficulty, RenderWindow& window, int x, int y){
+	int a = rand()%100+1;
+	string line;
+	if(Difficulty == 0){
+		ifstream d1("diff1.txt");
+		if (d1.is_open()){
+			for(int i = 0; i < a; i++){
+				getline(d1, line);
+			}
+    	}
+		ZagSlov(window, 0, y, x, line);
+	}
+	if(Difficulty == 1){
+		ifstream d2("diff2.txt");
+		if (d2.is_open()){
+			for(int i = 0; i < a; i++){
+				getline(d2, line);
+			}
+    	}
+    	ZagSlov(window, 1, y, x, line);
+	}
+	if(Difficulty == 2){
+		ifstream d3("diff3.txt");
+		if (d3.is_open()){
+			for(int i = 0; i < a; i++){
+				getline(d3, line);
+			}
+    	}
+    	ZagSlov(window, 2, y, x, line);
 	}
 }
 
+void checkletter(char x){
+	
+}
+
 void ChooseDiff(RenderWindow& window, int x, int y){
-    while(1){
-    	
-        Vector2i mousePoz = Mouse::getPosition(window);
+	int k;
+	while(window.isOpen()){
+        	Vector2i mousePoz = Mouse::getPosition(window);
+        	Event event;
+		while (window.pollEvent(event)){
+            		if (event.type == Event::Closed)
+                		window.close();
+        	}
+        	window.clear();
         
-        window.clear();
-        
-        RectangleShape Zalivka(Vector2f(x, y));
-    	Zalivka.setPosition(0, 0);
-    	Zalivka.setFillColor(Color::White);
-    	
-        RectangleShape Diff1(Vector2f(300, 100));
-        Diff1.setPosition(x/2-150, y/3-200);
-        Diff1.setFillColor(Color::Blue);
-        Text fontDiff1("Easy", font, 35);
-        fontDiff1.setPosition(x/2-150+110, y/3-200+25);
-        fontDiff1.setFillColor(Color::Black);
-        
-        RectangleShape Diff2(Vector2f(300, 100));
-        Diff2.setPosition(x/2-150, y/3*2-200);
-        Diff2.setFillColor(Color::Blue);
-        Text fontDiff2("Medium", font, 35);
-        fontDiff2.setPosition(x/2-150+85, y/3*2-200+25);
-        fontDiff2.setFillColor(Color::Black);
-        
-        RectangleShape Diff3(Vector2f(300, 100));
-        Diff3.setPosition(x/2-150, y-200);
-        Diff3.setFillColor(Color::Blue);
-        Text fontDiff3("Hard", font, 35);
-        fontDiff3.setPosition(x/2-150+110, y-200+25);
-        fontDiff3.setFillColor(Color::Black);
-        
-        window.draw(Zalivka);
-        window.draw(Diff1);
-        window.draw(fontDiff1);
-        window.draw(Diff2);
-        window.draw(fontDiff2);
-        window.draw(Diff3);
-        window.draw(fontDiff3);
-        window.display();
+		RectangleShape Zalivka(Vector2f(x, y));
+		Zalivka.setPosition(0, 0);
+		Zalivka.setFillColor(Color::White);
+
+		RectangleShape Diff1(Vector2f(300, 100));
+		Diff1.setPosition(x/2-150, y/3-200);
+		Diff1.setFillColor(Color::Blue);
+		Text fontDiff1("Easy", font, 35);
+		fontDiff1.setPosition(x/2-150+110, y/3-200+25);
+		fontDiff1.setFillColor(Color::Black);
+
+		RectangleShape Diff2(Vector2f(300, 100));
+		Diff2.setPosition(x/2-150, y/3*2-200);
+		Diff2.setFillColor(Color::Blue);
+		Text fontDiff2("Medium", font, 35);
+		fontDiff2.setPosition(x/2-150+85, y/3*2-200+25);
+		fontDiff2.setFillColor(Color::Black);
+
+		RectangleShape Diff3(Vector2f(300, 100));
+		Diff3.setPosition(x/2-150, y-200);
+		Diff3.setFillColor(Color::Blue);
+		Text fontDiff3("Hard", font, 35);
+		fontDiff3.setPosition(x/2-150+110, y-200+25);
+		fontDiff3.setFillColor(Color::Black);
+
+		window.draw(Zalivka);
+		window.draw(Diff1);
+		window.draw(fontDiff1);
+		window.draw(Diff2);
+		window.draw(fontDiff2);
+		window.draw(Diff3);
+		window.draw(fontDiff3);
+		window.display();
 
         if(Mouse::isButtonPressed(Mouse::Left)){
             if (Diff1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-				keyboard(window, x, y);
-				RandSlov(0, y, x, window);
+		    	k = 0;
+		    	break;
             }
             
             if (Diff2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	RandSlov(1, y, x, window);
-				keyboard(window, x, y);
+            	k = 1;
+            	break;
             }
             
             if (Diff3.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	RandSlov(2, y, x, window);
-				keyboard(window, x, y);
+            	k = 2;
+            	break;
             }
         }
     }
+	window.clear(sf::Color::White);
+    RandSlov(k, window, x, y);
 }
 
 int main(){
     if(!font.loadFromFile("C:/Windows/Fonts/Arial.ttf")) return EXIT_FAILURE;
     
     setlocale (LC_ALL,"ru_RU.UTF-8");
-    
-    string alphabet = "?????????????????????????????????";
-    
-    setlocale (LC_ALL,"ru_RU.UTF-8");
-    
-    string alphabet = "?????????????????????????????????";
     
     int x = 1920, y = 1080;
     RenderWindow window(VideoMode(x, y), "SFML window");
@@ -663,12 +729,6 @@ int main(){
     {
         Vector2i mousePoz = Mouse::getPosition(window);
         
-        Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == Event::Closed)
-                window.close();
-        }
         window.clear();
         window.draw(Zalivka);
         window.draw(sprite);
@@ -677,7 +737,6 @@ int main(){
         window.draw(But2);
         window.draw(fontBut2);
         window.display();
-        
         
         if(Mouse::isButtonPressed(Mouse::Left)){
             if (But2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
