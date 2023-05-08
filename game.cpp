@@ -9,61 +9,76 @@ using namespace sf;
 
 Font font;
 
+void keyboard(RenderWindow&, int, int);
+
 void ZagSlov(RenderWindow& window, int Difficulty, int y, int x, string line){
-	if(Difficulty == 0){
-		RectangleShape ZagBuk1(Vector2f(50, 50));
-		RectangleShape ZagBuk2(Vector2f(50, 50));
-		RectangleShape ZagBuk3(Vector2f(50, 50));
-		RectangleShape ZagBuk4(Vector2f(50, 50));
-		RectangleShape ZagBuk5(Vector2f(50, 50));
-		RectangleShape ZagBuk6(Vector2f(50, 50));
-		RectangleShape ZagBuk7(Vector2f(50, 50));
-
-		int t = x/2-420;
-		ZagBuk1.setPosition(t, y/2+50);
-		t+=60;
-		ZagBuk2.setPosition(t, y/2+50);
-		t+=60;
-		ZagBuk3.setPosition(t, y/2+50);
-		t+=60;
-		ZagBuk4.setPosition(t, y/2+50);
-		t+=60;
-		ZagBuk5.setPosition(t, y/2+50);
-		t+=60;
-		ZagBuk6.setPosition(t, y/2+50);
-		t+=60;
-		ZagBuk7.setPosition(t, y/2+50);
-		t+=60;
-
-		ZagBuk1.setFillColor(Color::Black);
-		ZagBuk2.setFillColor(Color::Black);
-		ZagBuk3.setFillColor(Color::Black);
-		ZagBuk4.setFillColor(Color::Black);
-		ZagBuk5.setFillColor(Color::Black);
-		ZagBuk6.setFillColor(Color::Black);
-		ZagBuk7.setFillColor(Color::Black);
-
-		window.draw(ZagBuk1);
-		window.draw(ZagBuk2);
-		window.draw(ZagBuk3);
-		window.draw(ZagBuk4);
-		window.draw(ZagBuk5);
-		window.draw(ZagBuk6);
-		window.draw(ZagBuk7);
-		window.display();
+	RectangleShape Zalivka(Vector2f(x, y));
+	Zalivka.setPosition(0, 0);
+	Zalivka.setFillColor(Color::White);
+	while(window.isOpen()){
+		if(Difficulty == 0){
+			Event event;
+			while (window.pollEvent(event)){
+            	if (event.type == Event::Closed)
+                	window.close();
+        	}
+			window.clear();	
+			window.draw(Zalivka);	
+			RectangleShape ZagBuk1(Vector2f(50, 50));
+			RectangleShape ZagBuk2(Vector2f(50, 50));
+			RectangleShape ZagBuk3(Vector2f(50, 50));
+			RectangleShape ZagBuk4(Vector2f(50, 50));
+			RectangleShape ZagBuk5(Vector2f(50, 50));
+			RectangleShape ZagBuk6(Vector2f(50, 50));
+			RectangleShape ZagBuk7(Vector2f(50, 50));
+	
+			int t = x/2-220;
+			ZagBuk1.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk2.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk3.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk4.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk5.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk6.setPosition(t, y/2+50);
+			t+=60;
+			ZagBuk7.setPosition(t, y/2+50);
+			t+=60;
+	
+			ZagBuk1.setFillColor(Color::Black);
+			ZagBuk2.setFillColor(Color::Black);
+			ZagBuk3.setFillColor(Color::Black);
+			ZagBuk4.setFillColor(Color::Black);
+			ZagBuk5.setFillColor(Color::Black);
+			ZagBuk6.setFillColor(Color::Black);
+			ZagBuk7.setFillColor(Color::Black);
+	
+			window.draw(ZagBuk1);
+			window.draw(ZagBuk2);
+			window.draw(ZagBuk3);
+			window.draw(ZagBuk4);
+			window.draw(ZagBuk5);
+			window.draw(ZagBuk6);
+			window.draw(ZagBuk7);
+			window.display();
+		}
+		if(Difficulty == 1){
+			
+		}
+		if(Difficulty == 2){
+			
+		}
+		if(Mouse::isButtonPressed(Mouse::Left)){
+			break;
+		}
 	}
-	if(Difficulty == 1){
-
-	}
-	if(Difficulty == 2){
-
-	}
-	while(1){
-		if(Mouse::isButtonPressed(Mouse::Right))break;
-	};
+	keyboard(window, x, y);
 }
 
-void RandSlov(int Difficulty, int y, int x, RenderWindow& window){
+void RandSlov(int Difficulty, RenderWindow& window, int x, int y){
 	int a = rand()%100+1;
 	string line;
 	if(Difficulty == 0){
@@ -82,6 +97,7 @@ void RandSlov(int Difficulty, int y, int x, RenderWindow& window){
 				getline(d2, line);
 			}
     	}
+    	ZagSlov(window, 1, y, x, line);
 	}
 	if(Difficulty == 2){
 		ifstream d3("diff3.txt");
@@ -90,8 +106,8 @@ void RandSlov(int Difficulty, int y, int x, RenderWindow& window){
 				getline(d3, line);
 			}
     	}
+    	ZagSlov(window, 2, y, x, line);
 	}
-	cout << line;
 }
 
 void checkletter(char x){
@@ -99,14 +115,13 @@ void checkletter(char x){
 }
 
 void keyboard(RenderWindow& window, int x, int y){
-	while(1){
+	while(window.isOpen()){
+		Event event;
+		while (window.pollEvent(event)){
+        	if (event.type == Event::Closed)
+                window.close();
+        }
 		Vector2i mousePoz = Mouse::getPosition(window);
-		
-		RectangleShape Zalivka(Vector2f(x, y));
-		Zalivka.setPosition(0, 0);
-		Zalivka.setFillColor(Color::White);
-		
-		window.draw(Zalivka);
 		
 		RectangleShape keycap1(Vector2f(50, 50));
 		RectangleShape keycap2(Vector2f(50, 50));
@@ -561,10 +576,14 @@ void keyboard(RenderWindow& window, int x, int y){
 }
 
 void ChooseDiff(RenderWindow& window, int x, int y){
-    while(1){
-    	
+	int k;
+    while(window.isOpen()){
         Vector2i mousePoz = Mouse::getPosition(window);
-        
+        Event event;
+		while (window.pollEvent(event)){
+            if (event.type == Event::Closed)
+                window.close();
+        }
         window.clear();
         
         RectangleShape Zalivka(Vector2f(x, y));
@@ -603,33 +622,29 @@ void ChooseDiff(RenderWindow& window, int x, int y){
 
         if(Mouse::isButtonPressed(Mouse::Left)){
             if (Diff1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-				keyboard(window, x, y);
-				RandSlov(0, y, x, window);
+				k = 0;
+				break;
             }
             
             if (Diff2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	RandSlov(1, y, x, window);
-				keyboard(window, x, y);
+            	k = 1;
+            	break;
             }
             
             if (Diff3.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-            	RandSlov(2, y, x, window);
-				keyboard(window, x, y);
+            	k = 2;
+            	break;
             }
         }
     }
+    window.clear();
+    RandSlov(k, window, x, y);
 }
 
 int main(){
     if(!font.loadFromFile("C:/Windows/Fonts/Arial.ttf")) return EXIT_FAILURE;
     
     setlocale (LC_ALL,"ru_RU.UTF-8");
-    
-    string alphabet = "?????????????????????????????????";
-    
-    setlocale (LC_ALL,"ru_RU.UTF-8");
-    
-    string alphabet = "?????????????????????????????????";
     
     int x = 1920, y = 1080;
     RenderWindow window(VideoMode(x, y), "SFML window");
@@ -663,12 +678,6 @@ int main(){
     {
         Vector2i mousePoz = Mouse::getPosition(window);
         
-        Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == Event::Closed)
-                window.close();
-        }
         window.clear();
         window.draw(Zalivka);
         window.draw(sprite);
@@ -677,7 +686,6 @@ int main(){
         window.draw(But2);
         window.draw(fontBut2);
         window.display();
-        
         
         if(Mouse::isButtonPressed(Mouse::Left)){
             if (But2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
