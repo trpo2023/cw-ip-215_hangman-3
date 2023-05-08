@@ -9,6 +9,8 @@ using namespace sf;
 
 Font font;
 
+void keyboard(RenderWindow&, int, int);
+
 void ZagSlov(RenderWindow& window, int Difficulty, int y, int x, string line){
 	while(window.isOpen()){
 		Vector2i mousePoz = Mouse::getPosition(window);
@@ -670,6 +672,39 @@ void ChooseDiff(RenderWindow& window, int x, int y){
 		window.draw(Diff3);
 		window.draw(fontDiff3);
 		window.display();
+		RectangleShape Zalivka(Vector2f(x, y));
+		Zalivka.setPosition(0, 0);
+		Zalivka.setFillColor(Color::White);
+
+		RectangleShape Diff1(Vector2f(300, 100));
+		Diff1.setPosition(x/2-150, y/3-200);
+		Diff1.setFillColor(Color::Blue);
+		Text fontDiff1("Easy", font, 35);
+		fontDiff1.setPosition(x/2-150+110, y/3-200+25);
+		fontDiff1.setFillColor(Color::Black);
+
+		RectangleShape Diff2(Vector2f(300, 100));
+		Diff2.setPosition(x/2-150, y/3*2-200);
+		Diff2.setFillColor(Color::Blue);
+		Text fontDiff2("Medium", font, 35);
+		fontDiff2.setPosition(x/2-150+85, y/3*2-200+25);
+		fontDiff2.setFillColor(Color::Black);
+
+		RectangleShape Diff3(Vector2f(300, 100));
+		Diff3.setPosition(x/2-150, y-200);
+		Diff3.setFillColor(Color::Blue);
+		Text fontDiff3("Hard", font, 35);
+		fontDiff3.setPosition(x/2-150+110, y-200+25);
+		fontDiff3.setFillColor(Color::Black);
+
+		window.draw(Zalivka);
+		window.draw(Diff1);
+		window.draw(fontDiff1);
+		window.draw(Diff2);
+		window.draw(fontDiff2);
+		window.draw(Diff3);
+		window.draw(fontDiff3);
+		window.display();
 
         if(Mouse::isButtonPressed(Mouse::Left)){
             if (Diff1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
@@ -680,9 +715,13 @@ void ChooseDiff(RenderWindow& window, int x, int y){
             if (Diff2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
             	k = 1;
             	break;
+            	k = 1;
+            	break;
             }
             
             if (Diff3.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
+            	k = 2;
+            	break;
             	k = 2;
             	break;
             }
