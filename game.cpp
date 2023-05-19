@@ -7,34 +7,92 @@ using namespace std;
 using namespace sf;
 
 int r = 0, x = 1920, y = 1080, mistake = 0, Difficulty;
+string alphabet = "qwertyuiopasdfghjklzxcvbnm";
+bool Arr[26];
 Font font;
 
 void ZagSlov(RenderWindow&, string);
 
+int main();
+
+void youlose(RenderWindow& window){
+	while(window.isOpen()){
+		Event event;
+		while(window.pollEvent(event)){
+            if(event.type == Event::Closed)
+                window.close();
+        }
+        Texture texture;
+        texture.loadFromFile("9.png");
+        Sprite sprite(texture);
+		sprite.setPosition(x/2-400, 0);
+		Text message1("You lose", font, 50);
+		message1.setFillColor(Color::Red);
+		message1.setPosition(x/2-125, y/2);
+		Text message2("Press 'Enter' to return to the start menu", font, 50);
+		message2.setFillColor(Color::Blue);
+		message2.setPosition(x/2-430, y/2+100);
+		
+		window.clear(Color::White);
+		window.draw(sprite);
+		window.draw(message1);
+		window.draw(message2);
+		window.display();
+		if(Keyboard::isKeyPressed(Keyboard::Return)){
+			window.close();
+			main();
+		}
+	}
+}
+
+void youwin(RenderWindow& window, string line){
+	while(window.isOpen()){
+		Event event;
+		while(window.pollEvent(event)){
+            if(event.type == Event::Closed)
+                window.close();
+        }
+		Text message1("You win!", font, 50);
+		message1.setFillColor(Color::Green);
+		message1.setPosition(x/2-125, y/2-100);
+		Text message2(line, font, 50);
+		message2.setFillColor(Color::Green);
+		message2.setPosition(x/2-125, y/2);
+		Text message3("Press 'Enter' to return to the start menu", font, 50);
+		message3.setFillColor(Color::Blue);
+		message3.setPosition(x/2-430, y/2+100);
+		
+		window.clear(Color::White);
+		window.draw(message1);
+		window.draw(message2);
+		window.draw(message3);
+		window.display();
+		if(Keyboard::isKeyPressed(Keyboard::Return)){
+			window.close();
+			main();
+		}
+	}
+}
+
 void checkletter(char c, string line, RenderWindow& window){
-	if(Difficulty == 0){
-		int Index[7];
-		bool Flag = false;
-		for(int i = 0; i < 7; i++){
-			if(line[i] == c){
-				Flag = true;
-				Index[r] = i;
-				r++;
-			}
+	bool Flag = false;
+	for(int i = 0; i < sizeof(line)-1; i++){
+		if(line[i] == c){
+			Flag = true;
+			r++;
 		}
-		if(Flag == false){
-			mistake++;
-		}
-		if(mistake == 8){
-			//you lose
-		}
-		if(r == 7){
-			//you win
-		}
-		if((r != 7) && (mistake != 8)){
-			sleep(seconds(0.2));
-			ZagSlov(window, line);
-		}
+	}
+	if(Flag == false){
+		mistake++;
+	}
+	if(mistake == 8){
+		youlose(window);
+	}
+	if(r == sizeof(line)-1){
+		youwin(window, line);
+	}
+	if((r < sizeof(line)-1) && (mistake < 8)){
+		ZagSlov(window, line);
 	}
 }
 
@@ -185,83 +243,119 @@ void ZagSlov(RenderWindow& window, string line){
 			window.draw(ZagBuk4);
 			window.draw(ZagBuk5);
 		}
+		for(int i = 0; i < 26; i++){
+			for(int j = 0; j < sizeof(line)-1; j++){
+				if((Arr[i] == true) && (line[j] == alphabet[i])){
+					Text letter(alphabet[i], font, 35);
+					letter.setPosition(x/2-210+60*j, y/2+50);
+					letter.setFillColor(Color::Red);
+					window.draw(letter);
+				}
+			}
+		}
 		window.display();
-		if(Keyboard::isKeyPressed(Keyboard::Q)){
+		if((Keyboard::isKeyPressed(Keyboard::Q)) && (Arr[0] == false)){
+			Arr[0] = true;
 			checkletter('q', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::W)){
+		if(Keyboard::isKeyPressed(Keyboard::W) && (Arr[1] == false)){
+			Arr[1] = true;
 			checkletter('w', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::E)){
+		if(Keyboard::isKeyPressed(Keyboard::E) && (Arr[2] == false)){
+			Arr[2] = true;
 			checkletter('e', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::R)){
+		if(Keyboard::isKeyPressed(Keyboard::R) && (Arr[3] == false)){
+			Arr[3] = true;
 			checkletter('r', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::T)){
+		if(Keyboard::isKeyPressed(Keyboard::T) && (Arr[4] == false)){
+			Arr[4] = true;
 			checkletter('t', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::Y)){
+		if(Keyboard::isKeyPressed(Keyboard::Y) && (Arr[5] == false)){
+			Arr[5] = true;
 			checkletter('y', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::U)){
+		if(Keyboard::isKeyPressed(Keyboard::U) && (Arr[6] == false)){
+			Arr[6] = true;
 			checkletter('u', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::I)){
+		if(Keyboard::isKeyPressed(Keyboard::I) && (Arr[7] == false)){
+			Arr[7] = true;
 			checkletter('i', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::O)){
+		if(Keyboard::isKeyPressed(Keyboard::O) && (Arr[8] == false)){
+			Arr[8] = true;
 			checkletter('o', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::P)){
+		if(Keyboard::isKeyPressed(Keyboard::P) && (Arr[9] == false)){
+			Arr[9] = true;
 			checkletter('p', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::A)){
+		if(Keyboard::isKeyPressed(Keyboard::A) && (Arr[10] == false)){
+			Arr[10] = true;
 			checkletter('a', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::S)){
+		if(Keyboard::isKeyPressed(Keyboard::S) && (Arr[11] == false)){
+			Arr[11] = true;
 			checkletter('s', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::D)){
+		if(Keyboard::isKeyPressed(Keyboard::D) && (Arr[12] == false)){
+			Arr[12] = true;
 			checkletter('d', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::F)){
+		if(Keyboard::isKeyPressed(Keyboard::F) && (Arr[13] == false)){
+			Arr[13] = true;
 			checkletter('f', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::G)){
+		if(Keyboard::isKeyPressed(Keyboard::G) && (Arr[14] == false)){
+			Arr[14] = true;
 			checkletter('g', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::H)){
+		if(Keyboard::isKeyPressed(Keyboard::H) && (Arr[15] == false)){
+			Arr[15] = true;
 			checkletter('h', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::J)){
+		if(Keyboard::isKeyPressed(Keyboard::J) && (Arr[16] == false)){
+			Arr[16] = true;
 			checkletter('j', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::K)){
+		if(Keyboard::isKeyPressed(Keyboard::K) && (Arr[17] == false)){
+			Arr[17] = true;
 			checkletter('k', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::L)){
+		if(Keyboard::isKeyPressed(Keyboard::L) && (Arr[18] == false)){
+			Arr[18] = true;
 			checkletter('l', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::Z)){
+		if(Keyboard::isKeyPressed(Keyboard::Z) && (Arr[19] == false)){
+			Arr[19] = true;
 			checkletter('z', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::X)){
+		if(Keyboard::isKeyPressed(Keyboard::X) && (Arr[20] == false)){
+			Arr[20] = true;
 			checkletter('x', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::C)){
+		if(Keyboard::isKeyPressed(Keyboard::C) && (Arr[21] == false)){
+			Arr[21] = true;
 			checkletter('c', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::V)){
+		if(Keyboard::isKeyPressed(Keyboard::V) && (Arr[22] == false)){
+			Arr[22] = true;
 			checkletter('v', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::B)){
+		if(Keyboard::isKeyPressed(Keyboard::B) && (Arr[23] == false)){
+			Arr[23] = true;
 			checkletter('b', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::N)){
+		if(Keyboard::isKeyPressed(Keyboard::N) && (Arr[24] == false)){
+			Arr[24] = true;
 			checkletter('n', line, window);
 		}
-		if(Keyboard::isKeyPressed(Keyboard::M)){
+		if(Keyboard::isKeyPressed(Keyboard::M) && (Arr[25] == false)){
+			Arr[25] = true;
 			checkletter('m', line, window);
 		}
 	}
@@ -269,6 +363,9 @@ void ZagSlov(RenderWindow& window, string line){
 
 void RandSlov(RenderWindow& window){
 	int a = rand()%100+1;
+	for(int i = 0; i < 26; i++){
+		Arr[i] = false;
+	}
 	string line;
 	if(Difficulty == 0){
 		ifstream d1("diff1.txt");
@@ -343,13 +440,14 @@ void ChooseDiff(RenderWindow& window){
 		    	Difficulty = 0;
 		    	RandSlov(window);
             }
+            
             if(Diff2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
             	Difficulty = 1;
             	RandSlov(window);
             }
+            
             if(Diff3.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
             	Difficulty = 2;
-
             	RandSlov(window);
             }
         }
@@ -361,12 +459,13 @@ int main(){
     
     RenderWindow window(VideoMode(x, y), "SFML window");
     
+    r = 0, mistake = 0;
+    
     Texture texture;
     if(!texture.loadFromFile("1.png")) return EXIT_FAILURE;
     Sprite sprite(texture);
-
     sprite.setPosition(x/2-400, 0);
-
+    
     RectangleShape But1(Vector2f(300, 100));
     But1.setPosition(x/2-400, y-180);
     But1.setFillColor(Color::Green);
