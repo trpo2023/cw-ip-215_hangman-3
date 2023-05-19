@@ -12,7 +12,6 @@ Font font;
 void ZagSlov(RenderWindow&, string);
 
 void checkletter(char c, string line, RenderWindow& window){
-	cout << "checkletter";
 	if(Difficulty == 0){
 		int Index[7];
 		bool Flag = false;
@@ -33,7 +32,7 @@ void checkletter(char c, string line, RenderWindow& window){
 			//you win
 		}
 		if((r != 7) && (mistake != 8)){
-			sleep(seconds(0.5));
+			sleep(seconds(0.2));
 			ZagSlov(window, line);
 		}
 	}
@@ -344,14 +343,13 @@ void ChooseDiff(RenderWindow& window){
 		    	Difficulty = 0;
 		    	RandSlov(window);
             }
-            
             if(Diff2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
             	Difficulty = 1;
             	RandSlov(window);
             }
-            
             if(Diff3.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
             	Difficulty = 2;
+
             	RandSlov(window);
             }
         }
@@ -366,8 +364,9 @@ int main(){
     Texture texture;
     if(!texture.loadFromFile("1.png")) return EXIT_FAILURE;
     Sprite sprite(texture);
+
     sprite.setPosition(x/2-400, 0);
-    
+
     RectangleShape But1(Vector2f(300, 100));
     But1.setPosition(x/2-400, y-180);
     But1.setFillColor(Color::Green);
