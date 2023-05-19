@@ -9,8 +9,6 @@ using namespace sf;
 
 Font font;
 
-void keyboard(RenderWindow&, int, int);
-
 void ZagSlov(RenderWindow& window, int Difficulty, int y, int x, string line){
 	while(window.isOpen()){
 		Vector2i mousePoz = Mouse::getPosition(window);
