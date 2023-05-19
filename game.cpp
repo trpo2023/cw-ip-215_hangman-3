@@ -75,8 +75,9 @@ void youwin(RenderWindow& window, string line){
 }
 
 void checkletter(char c, string line, RenderWindow& window){
+	cout << line.length();
 	bool Flag = false;
-	for(int i = 0; i < sizeof(line)-1; i++){
+	for(int i = 0; i < line.length(); i++){
 		if(line[i] == c){
 			Flag = true;
 			r++;
@@ -88,10 +89,10 @@ void checkletter(char c, string line, RenderWindow& window){
 	if(mistake == 8){
 		youlose(window);
 	}
-	if(r == sizeof(line)-1){
+	if(r == line.length()){
 		youwin(window, line);
 	}
-	if((r < sizeof(line)-1) && (mistake < 8)){
+	if((r < line.length()) && (mistake < 8)){
 		ZagSlov(window, line);
 	}
 }
@@ -244,7 +245,7 @@ void ZagSlov(RenderWindow& window, string line){
 			window.draw(ZagBuk5);
 		}
 		for(int i = 0; i < 26; i++){
-			for(int j = 0; j < sizeof(line)-1; j++){
+			for(int j = 0; j < line.length(); j++){
 				if((Arr[i] == true) && (line[j] == alphabet[i])){
 					Text letter(alphabet[i], font, 35);
 					letter.setPosition(x/2-210+60*j, y/2+50);
