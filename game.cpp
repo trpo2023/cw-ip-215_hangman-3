@@ -75,7 +75,6 @@ void youwin(RenderWindow& window, string line){
 }
 
 void checkletter(char c, string line, RenderWindow& window){
-	cout << line.length();
 	bool Flag = false;
 	for(int i = 0; i < line.length(); i++){
 		if(line[i] == c){
