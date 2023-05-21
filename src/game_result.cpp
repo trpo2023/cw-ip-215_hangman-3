@@ -8,7 +8,7 @@ void youlose(RenderWindow& window, string line, int x, int y, Font font){
                 window.close();
         }
         Texture texture;
-        texture.loadFromFile("9.png");
+        texture.loadFromFile("src/resources/9.png");
         Sprite sprite(texture);
 		sprite.setPosition(x/2-400, 0);
 		Text message1("You lose", font, 50);
@@ -16,7 +16,7 @@ void youlose(RenderWindow& window, string line, int x, int y, Font font){
 		message1.setPosition(x/2-125, y/2);
 		Text message2("Press 'Enter' to exit game", font, 50);
 		message2.setFillColor(Color::Blue);
-		message2.setPosition(x/2-430, y/2+100);
+		message2.setPosition(x/2-295, y/2+100);
 		Text message3(line, font, 50);
 		message3.setFillColor(Color::Green);
 		message3.setPosition(x/2-125, y/2);
@@ -47,7 +47,7 @@ void youwin(RenderWindow& window, string line, int x, int y, Font font){
 		message2.setPosition(x/2-125, y/2);
 		Text message3("Press 'Enter' to exit game", font, 50);
 		message3.setFillColor(Color::Blue);
-		message3.setPosition(x/2-430, y/2+100);
+		message3.setPosition(x/2-295, y/2+100);
 		
 		window.clear(Color::White);
 		window.draw(message1);
