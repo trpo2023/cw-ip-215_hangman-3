@@ -18,13 +18,14 @@ void youlose(RenderWindow& window, string line, int x, int y, Font font){
 		message2.setFillColor(Color::Blue);
 		message2.setPosition(x/2-295, y/2+100);
 		Text message3(line, font, 50);
-		message3.setFillColor(Color::Green);
-		message3.setPosition(x/2-125, y/2);
+		message3.setFillColor(Color::Red);
+		message3.setPosition(x/2-105, y/2+200);
 		
 		window.clear(Color::White);
 		window.draw(sprite);
 		window.draw(message1);
 		window.draw(message2);
+		window.draw(message3);
 		window.display();
 		if(Keyboard::isKeyPressed(Keyboard::Return)){
 			window.close();
@@ -44,7 +45,7 @@ void youwin(RenderWindow& window, string line, int x, int y, Font font){
 		message1.setPosition(x/2-125, y/2-100);
 		Text message2(line, font, 50);
 		message2.setFillColor(Color::Green);
-		message2.setPosition(x/2-125, y/2);
+		message2.setPosition(x/2-115, y/2);
 		Text message3("Press 'Enter' to exit game", font, 50);
 		message3.setFillColor(Color::Blue);
 		message3.setPosition(x/2-295, y/2+100);
