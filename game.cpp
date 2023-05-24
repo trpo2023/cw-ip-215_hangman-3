@@ -20,7 +20,7 @@ int main(){
     But1.setPosition(x/2-400, y-180);
     But1.setFillColor(Color::Green);
     Text fontBut1("Start Game", font, 35);
-    fontBut1.setPosition(x/2-400+60, y-180+25);
+    fontBut1.setPosition(x/2-399+60, y-180+25);
     fontBut1.setFillColor(Color::Black);
     
     RectangleShape But2(Vector2f(300, 100));
