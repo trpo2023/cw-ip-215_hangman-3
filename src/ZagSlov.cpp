@@ -134,111 +134,11 @@ void ZagSlov(RenderWindow& window, string line, int mistake, int Difficulty, int
 					window.draw(letter);
 				}
 			}
+			if((Keyboard::isKeyPressed(Keyboard::Key(i))) && (Arr[i] == false)){
+				Arr[i] = true;
+				checkletter(alphabet[i], line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
+			}
 		}
 		window.display();
-		if((Keyboard::isKeyPressed(Keyboard::Q)) && (Arr[0] == false)){
-			Arr[0] = true;
-			checkletter('q', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::W) && (Arr[1] == false)){
-			Arr[1] = true;
-			checkletter('w', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::E) && (Arr[2] == false)){
-			Arr[2] = true;
-			checkletter('e', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::R) && (Arr[3] == false)){
-			Arr[3] = true;
-			checkletter('r', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::T) && (Arr[4] == false)){
-			Arr[4] = true;
-			checkletter('t', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::Y) && (Arr[5] == false)){
-			Arr[5] = true;
-			checkletter('y', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::U) && (Arr[6] == false)){
-			Arr[6] = true;
-			checkletter('u', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::I) && (Arr[7] == false)){
-			Arr[7] = true;
-			checkletter('i', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::O) && (Arr[8] == false)){
-			Arr[8] = true;
-			checkletter('o', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::P) && (Arr[9] == false)){
-			Arr[9] = true;
-			checkletter('p', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::A) && (Arr[10] == false)){
-			Arr[10] = true;
-			checkletter('a', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::S) && (Arr[11] == false)){
-			Arr[11] = true;
-			checkletter('s', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::D) && (Arr[12] == false)){
-			Arr[12] = true;
-			checkletter('d', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::F) && (Arr[13] == false)){
-			Arr[13] = true;
-			checkletter('f', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::G) && (Arr[14] == false)){
-			Arr[14] = true;
-			checkletter('g', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::H) && (Arr[15] == false)){
-			Arr[15] = true;
-			checkletter('h', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::J) && (Arr[16] == false)){
-			Arr[16] = true;
-			checkletter('j', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::K) && (Arr[17] == false)){
-			Arr[17] = true;
-			checkletter('k', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::L) && (Arr[18] == false)){
-			Arr[18] = true;
-			checkletter('l', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::Z) && (Arr[19] == false)){
-			Arr[19] = true;
-			checkletter('z', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::X) && (Arr[20] == false)){
-			Arr[20] = true;
-			checkletter('x', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::C) && (Arr[21] == false)){
-			Arr[21] = true;
-			checkletter('c', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::V) && (Arr[22] == false)){
-			Arr[22] = true;
-			checkletter('v', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::B) && (Arr[23] == false)){
-			Arr[23] = true;
-			checkletter('b', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::N) && (Arr[24] == false)){
-			Arr[24] = true;
-			checkletter('n', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
-		if(Keyboard::isKeyPressed(Keyboard::M) && (Arr[25] == false)){
-			Arr[25] = true;
-			checkletter('m', line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
-		}
 	}
 }

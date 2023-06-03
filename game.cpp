@@ -2,7 +2,7 @@
 #include "src/ChooseDiff.hpp"
 
 int x = 1920, y = 1080, mistake = 0, Difficulty;
-string alphabet = "qwertyuiopasdfghjklzxcvbnm";
+string alphabet = "abcdefghijklmnopqrstuvwxyz";
 bool Arr[26];
 Font font;
 
