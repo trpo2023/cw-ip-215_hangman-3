@@ -7,7 +7,7 @@ bool Arr[26];
 Font font;
 
 int main(){
-    if(!font.loadFromFile("src/resources/Arial.ttf")) return EXIT_FAILURE;
+    if(!font.loadFromFile("src/resources/Arial.otf")) return EXIT_FAILURE;
     
     RenderWindow window(VideoMode(x, y), "SFML window");
     
