@@ -6,7 +6,7 @@ run:
 	./game
 
 game:build/game.o build/checkletter.o build/ChooseDiff.o build/game_result.o build/RandSlov.o build/ZagSlov.o
-	g++ -Wall -o game.exe build/game.o build/checkletter.o build/ChooseDiff.o build/game_result.o build/RandSlov.o build/ZagSlov.o -lsfml-system -lsfml-window -lsfml-graphics
+	g++ -Wall -o game build/game.o build/checkletter.o build/ChooseDiff.o build/game_result.o build/RandSlov.o build/ZagSlov.o -lsfml-system -lsfml-window -lsfml-graphics
 
 build/game.o:game.cpp
 	g++ -Wall -c -o build/game.o game.cpp
