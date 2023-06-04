@@ -1,12 +1,15 @@
-#include "src/ZagSlov.hpp"
-#include "src/ChooseDiff.hpp"
+#include "ZagSlov.hpp"
+#include "ChooseDiff.hpp"
+#include "RandSlov.hpp"
 
-int x = 1920, y = 1080, mistake = 0, Difficulty;
+int x = 1920, y = 1080, Difficulty;
 string alphabet = "abcdefghijklmnopqrstuvwxyz";
 bool Arr[26];
 Font font;
 
 int main(){
+    int mistake = 0;
+    string line;
     if(!font.loadFromFile("src/resources/Arial.otf")) return EXIT_FAILURE;
     
     RenderWindow window(VideoMode(x, y), "SFML window");
@@ -46,7 +49,9 @@ int main(){
                 window.close();
             }
             if(But1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-                ChooseDiff(window, x, y, font, Difficulty, Arr, mistake, alphabet);
+                ChooseDiff(window, x, y, font, Difficulty, Arr, alphabet);
+                RandSlov(window, Arr, mistake, Difficulty, y, x, alphabet, font, line);
+                ZagSlov(window, line, mistake, Difficulty, y, x, Arr, alphabet, font);
             }
         }    
     }

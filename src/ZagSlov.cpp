@@ -1,6 +1,6 @@
 #include "ZagSlov.hpp"
 
-void ZagSlov(RenderWindow& window, string line, int mistake, int Difficulty, int y, int x, bool Arr[], string alphabet, Font font){
+void ZagSlov(RenderWindow& window, string &line, int &mistake, int Difficulty, int y, int x, bool Arr[], string alphabet, Font font){
 	while(window.isOpen()){
 		Event event;
 		while(window.pollEvent(event)){
@@ -137,6 +137,7 @@ void ZagSlov(RenderWindow& window, string line, int mistake, int Difficulty, int
 			if((Keyboard::isKeyPressed(Keyboard::Key(i))) && (Arr[i] == false)){
 				Arr[i] = true;
 				checkletter(alphabet[i], line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
+				break;
 			}
 		}
 		window.display();

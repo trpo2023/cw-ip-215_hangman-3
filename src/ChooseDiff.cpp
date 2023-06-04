@@ -1,6 +1,6 @@
 #include "ChooseDiff.hpp"
 
-void ChooseDiff(RenderWindow& window, int x, int y, Font font, int Difficulty, bool Arr[], int mistake, string alphabet){
+void ChooseDiff(RenderWindow& window, int x, int y, Font font, int Difficulty, bool Arr[], string alphabet){
 	while(window.isOpen()){
         Vector2i mousePoz = Mouse::getPosition(window);
         Event event;
@@ -42,17 +42,17 @@ void ChooseDiff(RenderWindow& window, int x, int y, Font font, int Difficulty, b
         if(Mouse::isButtonPressed(Mouse::Left)){
             if(Diff1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
 		    	Difficulty = 0;
-		    	RandSlov(window, Arr, mistake, Difficulty, y, x, alphabet, font);
+				break;
             }
             
             if(Diff2.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
             	Difficulty = 1;
-            	RandSlov(window, Arr, mistake, Difficulty, y, x, alphabet, font);
+				break;
             }
             
             if(Diff3.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
             	Difficulty = 2;
-            	RandSlov(window, Arr, mistake, Difficulty, y, x, alphabet, font);
+				break;
             }
         }
     }
