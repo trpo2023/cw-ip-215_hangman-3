@@ -1,4 +1,6 @@
 #pragma once
-#include "RandSlov.hpp"
+#include <SFML/Graphics.hpp>
 
-void ChooseDiff(RenderWindow& window, int x, int y, Font font, int Difficulty, bool Arr[], string alphabet);
+using namespace sf;
+
+void ChooseDiff(RenderWindow& window, int x, int y, Font font, int Difficulty);

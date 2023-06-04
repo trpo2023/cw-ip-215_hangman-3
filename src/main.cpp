@@ -4,11 +4,11 @@
 
 int x = 1920, y = 1080, Difficulty;
 string alphabet = "abcdefghijklmnopqrstuvwxyz";
-bool Arr[26];
 Font font;
 
 int main(){
     int mistake = 0;
+    bool Arr[26];
     string line;
     if(!font.loadFromFile("src/resources/Arial.otf")) return EXIT_FAILURE;
     
@@ -49,8 +49,8 @@ int main(){
                 window.close();
             }
             if(But1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
-                ChooseDiff(window, x, y, font, Difficulty, Arr, alphabet);
-                RandSlov(window, Arr, mistake, Difficulty, y, x, alphabet, font, line);
+                ChooseDiff(window, x, y, font, Difficulty);
+                RandSlov(Arr, Difficulty, line);
                 ZagSlov(window, line, mistake, Difficulty, y, x, Arr, alphabet, font);
             }
         }    
