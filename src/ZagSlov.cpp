@@ -136,7 +136,7 @@ void ZagSlov(RenderWindow& window, string &line, int &mistake, int Difficulty, i
 			}
 			if((Keyboard::isKeyPressed(Keyboard::Key(i))) && (Arr[i] == false)){
 				Arr[i] = true;
-				checkletter(alphabet[i], line, window, mistake, x, y, font, Difficulty, Arr, alphabet);
+				checkletter(alphabet[i], line, window, mistake, x, y, font);
 				break;
 			}
 		}

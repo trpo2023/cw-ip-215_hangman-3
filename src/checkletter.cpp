@@ -2,7 +2,7 @@
 
 int r = 0;
 
-void checkletter(char c, string &line, RenderWindow& window, int &mistake, int x, int y, Font font, int Difficulty, bool Arr[], string alphabet){
+void checkletter(char c, string &line, RenderWindow& window, int &mistake, int x, int y, Font font){
 	bool Flag = false;
 	for(int i = 0; i < line.length(); i++){
 		if(line[i] == c){
