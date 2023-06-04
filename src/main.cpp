@@ -2,12 +2,12 @@
 #include "ChooseDiff.hpp"
 #include "RandSlov.hpp"
 
-int x = 1920, y = 1080, Difficulty;
+int x = 1920, y = 1080;
 string alphabet = "abcdefghijklmnopqrstuvwxyz";
 Font font;
 
 int main(){
-    int mistake = 0;
+    int mistake = 0, r = 0, Difficulty;
     bool Arr[26];
     string line;
     if(!font.loadFromFile("src/resources/Arial.otf")) return EXIT_FAILURE;
@@ -51,8 +51,8 @@ int main(){
             if(But1.getGlobalBounds().contains(mousePoz.x, mousePoz.y)){
                 ChooseDiff(window, x, y, font, Difficulty);
                 RandSlov(Arr, Difficulty, line);
-                ZagSlov(window, line, mistake, Difficulty, y, x, Arr, alphabet, font);
+                ZagSlov(window, line, mistake, r, Difficulty, y, x, Arr, alphabet, font);
             }
-        }    
+        }
     }
 }

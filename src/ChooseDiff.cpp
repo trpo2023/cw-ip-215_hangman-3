@@ -1,6 +1,6 @@
 #include "ChooseDiff.hpp"
 
-void ChooseDiff(RenderWindow& window, int x, int y, Font font, int Difficulty){
+void ChooseDiff(RenderWindow& window, int x, int y, Font font, int& Difficulty){
 	while(window.isOpen()){
         Vector2i mousePoz = Mouse::getPosition(window);
         Event event;

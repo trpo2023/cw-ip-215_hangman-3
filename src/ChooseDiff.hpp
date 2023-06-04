@@ -3,4 +3,4 @@
 
 using namespace sf;
 
-void ChooseDiff(RenderWindow& window, int x, int y, Font font, int Difficulty);
+void ChooseDiff(RenderWindow& window, int x, int y, Font font, int& Difficulty);

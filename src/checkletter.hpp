@@ -1,4 +1,6 @@
 #pragma once
-#include "game_result.hpp"
+#include <iostream>
 
-void checkletter(char c, string &line, RenderWindow& window, int &mistake, int x, int y, Font font);
+using namespace std;
+
+void checkletter(char c, string &line, int &mistake, int &r);

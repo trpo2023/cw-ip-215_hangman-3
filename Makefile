@@ -11,7 +11,7 @@ bin/main: build/src/main.o build/src/checkletter.o build/src/ChooseDiff.o build/
 build/src/%.o: src/%.cpp
 	g++ -Wall -c -o $@ $<
 
-bin/test: build/test/main.o build/test/RandSlov.o build/src/RandSlov.o
+bin/test: build/test/main.o build/test/RandSlov.o build/src/RandSlov.o build/test/checkletter.o build/src/checkletter.o
 	g++ -Wall -o $@ $^
 	./bin/test
 
