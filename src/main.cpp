@@ -35,6 +35,11 @@ int main(){
     
     while(window.isOpen()){
         Vector2i mousePoz = Mouse::getPosition(window);
+        Event event;
+        while(window.pollEvent(event)){
+            if(event.type == Event::Closed)
+                window.close();
+        }
         
         window.clear(Color::White);
         window.draw(sprite);
