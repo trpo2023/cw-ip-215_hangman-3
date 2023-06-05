@@ -9,7 +9,6 @@ void RandSlov(bool Arr[], int Difficulty, string &line){
 	ifstream difFile(difFileName);
 	if(difFile.is_open()){
 		for(int i = 0; i < a; i++){
-			line = "";
 			getline(difFile, line);
 		}
 	}
